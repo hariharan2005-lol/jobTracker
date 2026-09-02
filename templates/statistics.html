@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Statistics</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Job Application Statistics</h1>
+
+    <p>Total Applications: {{ total }}</p>
+
+    <h2>By Status</h2>
+    <table border="1">
+        <tr>
+            <th>Status</th>
+            <th>Count</th>
+        </tr>
+        {% for row in status_counts %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

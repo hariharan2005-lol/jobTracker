@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Applications</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Job Applications</h1>
+    <a href="/applications/add">+ Add New Application</a>
+    <form method="GET" action="/applications">
+    <input type="text" name="search" placeholder="Search by company" value="{{ search }}">
+    <input type="text" name="status" placeholder="Filter by status" value="{{ status_filter }}">
+    <button type="submit">Search</button>
+</form>
+    <table border="1">
+        <tr>
+            <th>Company</th>
+            <th>Role</th>
+            <th>Location</th>
+            <th>Applied Date</th>
+            <th>Status</th>
+            <th>Job URL</th>
+            <th>Notes</th>
+            <th>Actions</th>
+        </tr>
+        {% for app in applications %}
+        <tr>
+            <td>{{ app[1] }}</td>
+            <td>{{ app[2] }}</td>
+            <td>{{ app[3] }}</td>
+            <td>{{ app[4] }}</td>
+            <td>{{ app[5] }}</td>
+            <td>{{ app[6] }}</td>
+            <td>{{ app[7] }}</td>
+            <td><a href="/applications/{{ app[0] }}/edit">Edit</a></td>
+            <td><a href="/applications/{{ app[0] }}/delete">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

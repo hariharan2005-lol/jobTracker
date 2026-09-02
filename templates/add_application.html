@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Application</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Add Job Application</h1>
+
+    <form method="POST" action="/applications/add">
+        <label>Company:</label>
+        <input type="text" name="company"><br>
+
+        <label>Role:</label>
+        <input type="text" name="role"><br>
+
+        <label>Location:</label>
+        <input type="text" name="location"><br>
+
+        <label>Applied Date:</label>
+        <input type="date" name="applied_date"><br>
+
+        <label>Status:</label>
+        <input type="text" name="status"><br>
+
+        <label>Job URL:</label>
+        <input type="text" name="job_url"><br>
+
+        <label>Notes:</label>
+        <textarea name="notes"></textarea><br>
+
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>

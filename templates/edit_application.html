@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Application</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Edit Job Application</h1>
+
+    <form method="POST" action="/applications/{{ application[0] }}/edit">
+        <label>Company:</label>
+        <input type="text" name="company" value="{{ application[1] }}"><br>
+
+        <label>Role:</label>
+        <input type="text" name="role" value="{{ application[2] }}"><br>
+
+        <label>Location:</label>
+        <input type="text" name="location" value="{{ application[3] }}"><br>
+
+        <label>Applied Date:</label>
+        <input type="date" name="applied_date" value="{{ application[4] }}"><br>
+
+        <label>Status:</label>
+        <input type="text" name="status" value="{{ application[5] }}"><br>
+
+        <label>Job URL:</label>
+        <input type="text" name="job_url" value="{{ application[6] }}"><br>
+
+        <label>Notes:</label>
+        <textarea name="notes">{{ application[7] }}</textarea><br>
+
+        <button type="submit">Save Changes</button>
+    </form>
+</body>
+</html>
